@@ -1,13 +1,9 @@
 .main-page{
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
-.add-task{
-    
-    width: 50%;
-}
-.showTask{
-    width: 50%;
-}
+
 .heading{
     text-align: center;
     color: blue;
@@ -34,6 +30,7 @@
     border: none;
     border-radius: 20px;
     background-color: blue;
+    color: aliceblue;
     margin: 2px auto;
     display: block;
     font-size: 20px;
