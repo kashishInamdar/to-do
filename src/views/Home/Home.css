@@ -1,0 +1,31 @@
+.main-page{
+    display: flex;
+}
+.add-task{
+    
+    width: 50%;
+}
+.showTask{
+    width: 50%;
+}
+.heading{
+    text-align: center;
+    color: blue;
+}
+.task-input{
+    
+    width: 500px;
+    margin: 20px auto;
+}
+.inputs{
+    display: block;
+    margin: 20px auto;
+    width: 400px;
+    height:50px ;
+    border: 2px solid rgb(34, 34, 141);
+    border-radius: 10px;
+    outline-color: blue;
+    padding: 2px 20px;
+    font-size: 20px;
+}
+
