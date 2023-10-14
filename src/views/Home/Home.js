@@ -1,74 +1,76 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Card from "../../component/Card/Card";
+
 import "./Home.css"
 
 export default function Home() {
 
     const [taskList, setTaskList] = useState([
         {
-            task: "khana banana he",
-            description: "bhuk lagne pr",
-            priority: "mudium",
+            id: 1,
+            title: "Complete To-Do App",
+            description: "Nahi to piche rehejaygi",
+            priority: "High"
         },
         {
-            task: "Padhai krni he",
-            description: "Sir ki dat se bachnake ke liye",
-            priority: "High",
+            id: 2,
+            title: "learn CRUD Opration",
+            description: "Quch nahi aata yesa bolege",
+            priority: "High"
         },
         {
-            task: "Ghumne jana he",
-            description: "Man ko rahat ki zarurat he",
-            priority: "High",
-        }
+            id: 1,
+            title: "Complete all opration ",
+            description: "Properly",
+            priority: "to High"
+        },
     ])
-    localStorage.setItem("Task", JSON.stringify(taskList))
-
-    // ---------- Set Inputs ------------------
-
-
-
-    // Get Data From Local Storage
-   useEffect(()=>{
-        const list = JSON.parse(localStorage.getItem("Task"))
-        if(list && list.length > 0){
-            setTaskList(list)
-        }
-   },[])
     
+
     return (
-        <div className="main-page" >
+        <div className="main-page">
+
             <div className="showTask">
                 <h1 className="heading">Show Task</h1>
-                {
-                    taskList.map((tasks)=>{
-                        const {task , description , priority } = tasks;
+                <div>
+                    {
+                        taskList.map((tasks, index) => {
+                            const { title, description, priority, id } = tasks;
 
-                        return(
-                            <div>
-                                <Card task={task} priority={priority} description={description}/>
-                            </div>
-                        )
-                    })
-                }
+                            return (
+                                <div>
+                                    <Card id={id} title={title} description={description} priority={priority} />
+                                </div>
+                            )
+                        })
+                    }
+                </div>
 
             </div>
+
             <div className="add-task">
                 <h1 className="heading">Add Task</h1>
-               <div className="task-input">
-                <input 
-                type="text" 
-                className="inputs" 
-                
-                />
+                <form className="task-input">
+                    <input type="text"
+                        className="inputs"
 
-                <input type="text" className="inputs" />
+                    />
 
-                <input type="text" className="inputs" />
-               </div>
+                    <input type="text"
+                        className="inputs"
+
+                    />
+
+                    <input type="text"
+                        className="inputs"
+
+                    />
+
+                </form>
 
             </div>
-
         </div>
-
     )
+
 }
+
